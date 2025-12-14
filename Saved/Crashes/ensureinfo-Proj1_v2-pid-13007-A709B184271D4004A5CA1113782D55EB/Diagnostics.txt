@@ -1,0 +1,40 @@
+Generating report for minidump
+
+Application version 5.6.1.0
+ ... built from changelist 44394996
+
+OS version Linux 6.17.9-arch1-1 (network name: Arch-Nitro5-GG)
+Running 6 x86_64 processors (12 logical cores)
+Exception was "Ensure condition failed: !Velocity.ContainsNaN()  [File:./Runtime/Engine/Private/Components/CharacterMovementComponent.cpp] [Line: 2925] "
+
+<SOURCE START>
+<SOURCE END>
+
+<CALLSTACK START>
+libUnrealEditor-Engine.so!UCharacterMovementComponent::PerformMovement(float)::$_0::operator()() const [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/Engine/Private/Components/CharacterMovementComponent.cpp:2925]
+libUnrealEditor-Engine.so!UCharacterMovementComponent::PerformMovement(float) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/Engine/Private/Components/CharacterMovementComponent.cpp:2925]
+libUnrealEditor-Engine.so!UCharacterMovementComponent::ControlledCharacterMove(UE::Math::TVector<double> const&, float) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/Engine/Private/Components/CharacterMovementComponent.cpp:6281]
+libUnrealEditor-Engine.so!UCharacterMovementComponent::TickComponent(float, ELevelTick, FActorComponentTickFunction*) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/Engine/Private/Components/CharacterMovementComponent.cpp:1705]
+libUnrealEditor-Engine.so!FActorComponentTickFunction::ExecuteTick(float, ELevelTick, ENamedThreads::Type, TRefCountPtr<FBaseGraphTask> const&) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/Engine/Private/Components/ActorComponent.cpp:1591]
+libUnrealEditor-Engine.so!TGraphTask<FTickFunctionTask>::ExecuteTask() [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/Engine/Private/TickTaskManager.cpp:329]
+libUnrealEditor-Core.so!UE::Tasks::Private::FTaskBase::TryExecuteTask() [/mnt/horde/++UE5/Sync/Engine/Source/Runtime/Core/Public/Tasks/TaskPrivate.h:527]
+libUnrealEditor-Core.so!FNamedTaskThread::ProcessTasksNamedThread(int, bool) [/mnt/horde/++UE5/Sync/Engine/Source/Runtime/Core/Public/Async/TaskGraphInterfaces.h:505]
+libUnrealEditor-Core.so!FNamedTaskThread::ProcessTasksUntilIdle(int) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/Core/Private/Async/TaskGraph.cpp:678]
+libUnrealEditor-Core.so!FTaskGraphCompatibilityImplementation::ProcessUntilTasksComplete(TArray<TRefCountPtr<FBaseGraphTask>, TSizedInlineAllocator<4u, 32, TSizedDefaultAllocator<32> > > const&, ENamedThreads::Type, TFunction<FTaskGraphInterface::EProcessTasksOperation (int)> const&) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/Core/Private/Async/TaskGraph.cpp:1557]
+libUnrealEditor-Engine.so!FTickTaskSequencer::ReleaseTickGroup(ETickingGroup, bool, TArray<FTickFunction*, TSizedDefaultAllocator<32> >&) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/Engine/Private/TickTaskManager.cpp:986]
+libUnrealEditor-Engine.so!FTickTaskManager::RunTickGroup(ETickingGroup, bool) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/Engine/Private/TickTaskManager.cpp:2078]
+libUnrealEditor-Engine.so!UWorld::Tick(ELevelTick, float) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/Engine/Private/LevelTick.cpp:783]
+libUnrealEditor-UnrealEd.so!UEditorEngine::Tick(float, bool) [/mnt/horde/++UE5/Sync/Engine/Source/./Editor/UnrealEd/Private/EditorEngine.cpp:2149]
+libUnrealEditor-UnrealEd.so!UUnrealEdEngine::Tick(float, bool) [/mnt/horde/++UE5/Sync/Engine/Source/./Editor/UnrealEd/Private/UnrealEdEngine.cpp:530]
+UnrealEditor!FEngineLoop::Tick() [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/Launch/Private/LaunchEngineLoop.cpp:5619]
+UnrealEditor!GuardedMain(char16_t const*) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/Launch/Private/Launch.cpp:60]
+libUnrealEditor-UnixCommonStartup.so!CommonUnixMain(int, char**, int (*)(char16_t const*), void (*)()) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/Unix/UnixCommonStartup/Private/UnixCommonStartup.cpp:323]
+libc.so.6!UnknownFunction(0x27634)
+libc.so.6!__libc_start_main(+0x88)
+UnrealEditor!_start [/opt/unreal-engine/Engine/Binaries/Linux/UnrealEditor:-1]
+
+<CALLSTACK END>
+
+0 loaded modules
+
+Report end!
